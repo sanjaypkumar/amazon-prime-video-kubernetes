@@ -1,3 +1,4 @@
+
 pipeline{
     agent any     
     stages {
@@ -8,7 +9,7 @@ pipeline{
         }
         stage('Checkout from Git'){
             steps{
-                git branch: 'main', url: 'https://github.com/Aseemakram19/amazon-prime-video-kubernetes.git'
+                git branch: 'main', url: 'https://github.com/sanjaypkumar/amazon-prime-video-kubernetes.git'
             }
         }        
         stage('Deploy to EKS Cluster') {
@@ -20,7 +21,7 @@ pipeline{
                     aws sts get-caller-identity
 
                     echo "Configuring kubectl for EKS cluster..."
-                    aws eks update-kubeconfig --region ap-south-1 --name Cloudaseem
+                    aws eks update-kubeconfig --region ap-south-1 --name Cloudaseem-v2
 
                     echo "Verifying kubeconfig..."
                     kubectl config view
@@ -55,9 +56,9 @@ pipeline{
                     <p>Started by: ${buildUser}</p>
                     <p>Build URL: <a href="${env.BUILD_URL}">${env.BUILD_URL}</a></p>
                 """,
-                to: 'mohdaseemakram19@gmail.com',
-                from: 'mohdaseemakram19@gmail.com',
-                replyTo: 'mohdaseemakram19@gmail.com',
+                to: 'palleboinasanjaykumar@gmail.com',
+                from: 'palleboinasanjaykumar@gmail.com',
+                replyTo: 'palleboinasanjaykumar@gmail.com',
                 mimeType: 'text/html',
                 attachmentsPattern: 'trivyfs.txt,trivyimage.txt'
             )
