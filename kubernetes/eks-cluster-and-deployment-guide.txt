@@ -108,7 +108,7 @@ Goto EKS Console and verify the cluster.
 (b)
 eksctl utils associate-iam-oidc-provider \
     --region ap-south-1 \
-    --cluster Cloudaseem \
+    --cluster Cloudaseem-v2 \
     --approve
 
 The above command is crucial when setting up an EKS cluster because it enables IAM roles for service accounts (IRSA)
@@ -120,7 +120,7 @@ Without this, these services will not be able to access AWS resources securely.
 (c)
 Before executing the below command, in the 'ssh-public-key' keep the  '<PEM FILE NAME>' (dont give .pem. Just give the pem file name) which was used to create Jenkins Server
 
-eksctl create nodegroup --cluster=Cloudaseem \
+eksctl create nodegroup --cluster=Cloudaseem-v2 \
                        --region=ap-south-1 \
                        --name=node2 \
                        --node-type=t3.medium \
@@ -129,7 +129,7 @@ eksctl create nodegroup --cluster=Cloudaseem \
                        --nodes-max=4 \
                        --node-volume-size=20 \
                        --ssh-access \
-                       --ssh-public-key=starbucks1 \
+                       --ssh-public-key=primevideo \
                        --managed \
                        --asg-access \
                        --external-dns-access \
