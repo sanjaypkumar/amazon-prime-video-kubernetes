@@ -96,7 +96,7 @@ Create credentials to connect with your aws account
 Create EKS Cluster
 Execute the below commands as separate set
 (a)
-eksctl create cluster --name=Cloudaseem \
+eksctl create cluster --name=Cloudaseem-v2\
                       --region=ap-south-1 \
                       --zones=ap-south-1a,ap-south-1b \
                       --version=1.30 \
